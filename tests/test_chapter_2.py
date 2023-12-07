@@ -1,4 +1,4 @@
-from ml.chapter_2 import AND, NAND, OR
+from ml.chapter_2 import AND, NAND, OR, XOR
 
 
 def test_2_3_1():
@@ -29,3 +29,10 @@ def test_2_3_3():
     assert OR(1, 0) == 1
     assert OR(0, 1) == 1
     assert OR(1, 1) == 1
+
+
+def test_2_5_1():
+    assert XOR(0, 0) == 0
+    assert XOR(1, 0) == 1
+    assert XOR(0, 1) == 1
+    assert XOR(1, 1) == 0
