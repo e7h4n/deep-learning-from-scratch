@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import pprint
 import matplotlib.pylab as plt
-from ml.chapter_3 import init_network, relu, sigmoid, step_function, forward
+from practice.chapter_3 import init_network, relu, sigmoid, step_function, forward
 
 pp = pprint.PrettyPrinter(indent=4)
 p = pp.pprint

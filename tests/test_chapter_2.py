@@ -1,6 +1,4 @@
-import numpy as np
-import pytest
-from ml.chapter_2 import AND, NAND, OR, XOR
+from practice.chapter_2 import AND, NAND, OR, XOR
 
 
 def test_2_3_1():
