@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import pprint
 import matplotlib.pylab as plt
-from ml.chapter_3 import relu, sigmoid, step_function
+from ml.chapter_3 import init_network, relu, sigmoid, step_function, forward
 
 pp = pprint.PrettyPrinter(indent=4)
 p = pp.pprint
@@ -96,3 +96,49 @@ def test_3_3_3():
     p(W.shape)
     Y = np.dot(X, W)
     p(Y)
+
+
+def test_3_4_2():
+    X = np.array([1.0, 0.5])
+    W1 = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
+    B1 = np.array([0.1, 0.2, 0.3])
+
+    p(W1.shape)
+    p(X.shape)
+    p(B1.shape)
+
+    A1 = np.dot(X, W1) + B1
+    Z1 = sigmoid(A1)
+    p(A1)
+    p(Z1)
+
+    W2 = np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]])
+    B2 = np.array([0.1, 0.2])
+
+    p(Z1.shape)
+    p(W2.shape)
+    p(B2.shape)
+
+    A2 = np.dot(Z1, W2) + B2
+    Z2 = sigmoid(A2)
+
+    p(A2)
+    p(Z2)
+
+    def identity_function(x):
+        return x
+
+    W3 = np.array([[0.1, 0.3], [0.2, 0.4]])
+    B3 = np.array([0.1, 0.2])
+
+    A3 = np.dot(Z2, W3) + B3
+    Y = identity_function(A3)
+
+    p(Y)
+
+
+def test_3_4_3():
+    network = init_network()
+    x = np.array([1.0, 0.5])
+    y = forward(network, x)
+    p(y)

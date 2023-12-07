@@ -1,3 +1,5 @@
+import numpy as np
+import pytest
 from ml.chapter_2 import AND, NAND, OR, XOR
 
 
