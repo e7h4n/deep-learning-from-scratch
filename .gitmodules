@@ -1,0 +1,3 @@
+[submodule "author-project"]
+	path = author-project
+	url = https://github.com/oreilly-japan/deep-learning-from-scratch
